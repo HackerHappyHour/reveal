@@ -20,11 +20,11 @@
       "email": "shine.nick@gmail.com",
       "url": "https://https://github.com/nickshine"
     },
-		{
-  		"name": "Brian Vanderbusch",
-  		"email": "chief@hackerhappyhour.com",
-  		"web": "http://github.com/LongLiveCHIEF"
-		}
+    {
+      "name": "Brian Vanderbusch",
+      "email": "chief@hackerhappyhour.com",
+      "web": "http://github.com/LongLiveCHIEF"
+    }
   ],
   "repository": {
     "type": "git",
