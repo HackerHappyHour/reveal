@@ -18,8 +18,13 @@
     {
       "name": "Nick Shine",
       "email": "shine.nick@gmail.com",
-      "url": "https://nshine.dev"
-    }
+      "url": "https://https://github.com/nickshine"
+    },
+		{
+  		"name": "Brian Vanderbusch",
+  		"email": "chief@hackerhappyhour.com",
+  		"web": "http://github.com/LongLiveCHIEF"
+		}
   ],
   "repository": {
     "type": "git",
@@ -27,7 +32,7 @@
   },
   "bugs": "https://github.com/HackerHappyHour/reveal.js/issues",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "devDependencies": {
     "express": "^4.16.2",
