@@ -1,6 +1,12 @@
 ## Contributing
 
-Please keep the [issue tracker](http://github.com/hakimel/reveal.js/issues) limited to **bug reports**, **feature requests** and **pull requests**.
+[HackerHappyHour](https://github.com/HackerHappyHour) is accepting requests for
+maintainers/collaborators to join and/or help maintain __reveal.js__. Visit our
+[HackerHappyHour revealjs Discord channel](https://discord.gg/nAw95ZV) to find out more!
+
+---
+
+Please keep the [issue tracker](http://github.com/HackerHappyHour/reveal.js/issues) limited to **bug reports**, **feature requests** and **pull requests**.
 
 
 ### Personal Support
