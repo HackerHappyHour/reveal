@@ -1,12 +1,20 @@
 # reveal.js 
 
-A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://revealjs.com/).
+A framework for easily creating beautiful web-based presentations. [Check out the live demo](http://revealjs.com/).
 
->__Note:__ This repository was forked from [hakimel/reveal.js](https://github.com/hakimel/reveal.js) on 3/11/2019 to continue active development and feature contributions to reveal.js. Upstream This fork [is published](https://npmjs.com/package/@h3/reveal.js) on npmjs under the `@h3` scope. See [CONTRIBUTING](CONTRIBUTING.md) for info on how to join [HackerHappyHour](https://github.com/HackerHappyHour) and contribute!
+>__Note:__ This repository was forked from [hakimel/reveal.js](https://github.com/hakimel/reveal.js) on 3/11/2019 
+to continue active development and feature contributions to reveal.js. Upstream of this fork 
+[is published](https://npmjs.com/package/@h3/reveal.js) on npmjs under the `@h3` scope. 
+See [CONTRIBUTING](CONTRIBUTING.md) for info on how to join [HackerHappyHour](https://github.com/HackerHappyHour) and contribute!
 
 ## @h3/reveal.js Roadmap:
-* Native Docker integration
-* ... 
+
+The goal of @h3/reveal moving forward is to make it easier to use for non-developers and
+developers alike by modernizing how reveal is distributed, deployed, extended, and integrated.
+
+Our most important goals are currently tracked in our [projects][] and [milestones][]. In particular the [v2 milestone][]
+looks to pull as many existing PR's from the upstream project as possible, and bring the reveal project up to speed
+with modern tooling, api design, and front-end features.
 
 ---
 
@@ -1321,3 +1329,8 @@ If you want to include math inside of a presentation written in Markdown you nee
 MIT licensed
 
 Copyright (C) 2018 Hakim El Hattab, http://hakim.se
+Modified work Copyright 2019 Hacker Happy Hour, https://github.com/HackerHappyHour and reveal.js contributors
+
+[projects]: https://github.com/HackerHappyHour/reveal.js/projects
+[milestones]: https://github.com/HackerHappyHour/reveal.js/milestones
+[v2 roadmap]: https://github.com/HackerHappyHour/reveal.js/milestone/1
