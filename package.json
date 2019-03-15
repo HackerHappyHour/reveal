@@ -1,26 +1,38 @@
 {
-  "name": "reveal.js",
-  "version": "3.7.0",
+  "name": "@h3/reveal.js",
+  "version": "1.0.0",
   "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
-  "subdomain": "revealjs",
+  "homepage": "https://github.com/HackerHappyHour/reveal.js/",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
     "build": "grunt"
   },
-  "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
-  },
+  "contributors": [
+    {
+      "name": "Hakim El Hattab",
+      "email": "hakim.elhattab@gmail.com",
+      "web": "http://hakim.se"
+    },
+    {
+      "name": "Nick Shine",
+      "email": "shine.nick@gmail.com",
+      "url": "https://https://github.com/nickshine"
+    },
+    {
+      "name": "Brian Vanderbusch",
+      "email": "chief@hackerhappyhour.com",
+      "web": "http://github.com/LongLiveCHIEF"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "https://github.com/HackerHappyHour/reveal.js.git"
   },
+  "bugs": "https://github.com/HackerHappyHour/reveal.js/issues",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "devDependencies": {
     "express": "^4.16.2",
