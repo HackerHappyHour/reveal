@@ -1328,7 +1328,7 @@ If you want to include math inside of a presentation written in Markdown you nee
 
 MIT licensed
 
-Copyright (C) 2018 Hakim El Hattab, http://hakim.se
+Copyright (C) 2018 Hakim El Hattab, http://hakim.se  
 Modified work Copyright 2019 Hacker Happy Hour, https://github.com/HackerHappyHour and reveal.js contributors
 
 [projects]: https://github.com/HackerHappyHour/reveal.js/projects
