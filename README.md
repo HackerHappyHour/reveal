@@ -3,7 +3,7 @@
 A framework for easily creating beautiful web-based presentations. [Check out the live demo](http://revealjs.com/).
 
 >__Note:__ This repository was forked from [hakimel/reveal.js](https://github.com/hakimel/reveal.js) on 3/11/2019 
-to continue active development and feature contributions to reveal.js. Upstream of this fork 
+to continue active development and feature contributions to reveal.js. This fork 
 [is published](https://npmjs.com/package/@h3/reveal.js) on npmjs under the `@h3` scope. 
 See [CONTRIBUTING](CONTRIBUTING.md) for info on how to join [HackerHappyHour](https://github.com/HackerHappyHour) and contribute!
 
@@ -1333,4 +1333,4 @@ Modified work Copyright 2019 Hacker Happy Hour, https://github.com/HackerHappyHo
 
 [projects]: https://github.com/HackerHappyHour/reveal.js/projects
 [milestones]: https://github.com/HackerHappyHour/reveal.js/milestones
-[v2 roadmap]: https://github.com/HackerHappyHour/reveal.js/milestone/1
+[v2 milestone]: https://github.com/HackerHappyHour/reveal.js/milestone/1
