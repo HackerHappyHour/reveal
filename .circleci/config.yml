@@ -5,5 +5,8 @@ jobs:
     docker:
       - image: circleci/node:4.8.2
     steps:
-      - checkout # check out the code in the project directory
-      - run: echo "hello world"
+      - checkout
+      - run:
+          name: Build
+          command: npm run build -- retire
+
