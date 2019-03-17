@@ -6,7 +6,10 @@ jobs:
       - image: circleci/node:4.8.2
     steps:
       - checkout
-      - run:
-          name: Build
-          command: npm run build -- retire
+      - run: npm install
+      - run: npm run build -- retire
+      - save_cache:
+          key: v1-repo-{{ .Environment.CICRLE_SHA1 }}
+          paths:
+            - node_modules/
 
