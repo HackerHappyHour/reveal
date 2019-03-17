@@ -9,7 +9,7 @@ jobs:
       - run: npm install
       - run: npm run build -- retire
       - save_cache:
-          key: v1-repo-{{ .Environment.CICRLE_SHA1 }}
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules/
 
