@@ -1,5 +1,5 @@
 {
-  "name": "@h3/reveal.js",
+  "name": "@h3/reveal",
   "version": "1.0.0",
   "description": "The HTML Presentation Framework",
   "homepage": "https://github.com/HackerHappyHour/reveal.js/",
@@ -28,9 +28,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/HackerHappyHour/reveal.js.git"
+    "url": "https://github.com/HackerHappyHour/reveal.git"
   },
-  "bugs": "https://github.com/HackerHappyHour/reveal.js/issues",
+  "bugs": "https://github.com/HackerHappyHour/reveal/issues",
   "engines": {
     "node": ">=8.0.0"
   },
