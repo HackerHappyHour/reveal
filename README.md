@@ -1,4 +1,4 @@
-# reveal 
+# reveal
 
 [![Discord](https://img.shields.io/discord/231173817567805440.svg?colorB=7289DA&label=Discord&logo=Discord&logoColor=7289DA&style=flat-square)](https://discord.gg/nAw95ZV)
 ![CircleCI (all branches)](https://img.shields.io/circleci/project/github/HackerHappyHour/reveal.svg?logo=circleci&style=flat-square)
