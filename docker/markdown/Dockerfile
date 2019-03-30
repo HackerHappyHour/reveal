@@ -2,7 +2,7 @@ FROM node:10 AS builder
 
 WORKDIR /reveal
 
-RUN npm install reveal.js
+RUN npm install @h3/reveal
 
 FROM nginx:1.15
 
@@ -10,6 +10,8 @@ ENV SITE=/usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/
 COPY --from=builder /reveal/node_modules/reveal.js $SITE/
+COPY ./src $SITE/src/
+COPY index.html $SITE/index.html
 
 # set up as non-root/ non-system user for deploying to strict environments
 RUN deluser nginx \
@@ -20,7 +22,6 @@ RUN deluser nginx \
   && chown -R nginx:nginx /var/run/nginx.pid \
   && chown -R nginx:nginx /var/cache/nginx \
   && chown -R nginx:nginx $SITE \
-  && mv $SITE/demo.html $SITE/index.html
 
 EXPOSE 8080
 USER 1000
