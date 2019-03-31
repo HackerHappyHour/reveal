@@ -1,4 +1,11 @@
-# reveal.js 
+# reveal
+
+[![Discord](https://img.shields.io/discord/231173817567805440.svg?colorB=7289DA&label=Discord&logo=Discord&logoColor=7289DA&style=flat-square)](https://discord.gg/nAw95ZV)
+![CircleCI (all branches)](https://img.shields.io/circleci/project/github/HackerHappyHour/reveal.svg?logo=circleci&style=flat-square)
+[![npm](https://img.shields.io/npm/v/@h3/reveal.svg?style=flat-square)](https://www.npmjs.com/package/@h3/reveal)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) 
+![node](https://img.shields.io/node/v/@h3/reveal.svg?style=flat-square)
 
 A framework for easily creating beautiful web-based presentations. [Check out the live demo](http://revealjs.com/).
 
@@ -7,7 +14,7 @@ to continue active development and feature contributions to reveal.js. This fork
 [is published](https://npmjs.com/package/@h3/reveal.js) on npmjs under the `@h3` scope. 
 See [CONTRIBUTING](CONTRIBUTING.md) for info on how to join [HackerHappyHour](https://github.com/HackerHappyHour) and contribute!
 
-## @h3/reveal.js Roadmap:
+## @h3/reveal Roadmap:
 
 The goal of @h3/reveal moving forward is to make it easier to use for non-developers and
 developers alike by modernizing how reveal is distributed, deployed, extended, and integrated.
@@ -18,8 +25,9 @@ with modern tooling, api design, and front-end features.
 
 ---
 
-reveal.js comes with a broad range of features including [nested slides](https://github.com/HackerHappyHour/reveal.js#markup), [Markdown contents](https://github.com/HackerHappyHour/reveal.js#markdown), [PDF export](https://github.com/HackerHappyHour/reveal.js#pdf-export), [speaker notes](https://github.com/HackerHappyHour/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/HackerHappyHour/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com?ref=github).
+reveal.js comes with a broad range of features including [nested slides](https://github.com/HackerHappyHour/reveal.js#markup), [Markdown contents](https://github.com/HackerHappyHour/reveal.js#markdown), [PDF export](https://github.com/HackerHappyHour/reveal.js#pdf-export), [speaker notes](https://github.com/HackerHappyHour/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/HackerHappyHour/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com?ref=github). 
 
+<a href="https://slides.com?ref=github"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
 
 ## Table of contents
 
