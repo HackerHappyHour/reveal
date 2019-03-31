@@ -1,15 +1,5 @@
 version: 2.1
 
-executors:
-  release:
-    docker:
-      - image: circleci/node:lts
-    environment:
-      GIT_AUTHOR_NAME: h3
-      GIT_AUTHOR_EMAIL: h3@hackerhappyhour.com
-      GIT_COMMITTER_NAME: h3
-      GIT_COMMITTER_EMAIL: h3@hackerhappyhour.com
-
 jobs:
   build:
     docker:
@@ -27,7 +17,13 @@ jobs:
           paths:
             - node_modules
   release:
-    executor: release
+    docker:
+      - image: circleci/node:lts
+    environment:
+      GIT_AUTHOR_NAME: h3
+      GIT_AUTHOR_EMAIL: h3@hackerhappyhour.com
+      GIT_COMMITTER_NAME: h3
+      GIT_COMMITTER_EMAIL: h3@hackerhappyhour.com
     description: "semantic-release"
     parameters:
       dry-run:
