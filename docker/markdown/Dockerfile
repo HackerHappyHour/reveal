@@ -9,7 +9,7 @@ FROM nginx:1.15
 ENV SITE=/usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/
-COPY --from=builder /reveal/node_modules/reveal.js $SITE/
+COPY --from=builder /reveal/node_modules/@h3/reveal $SITE/
 COPY ./markdown/src $SITE/src/
 COPY ./markdown/index.html $SITE/index.html
 
