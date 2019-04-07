@@ -10,8 +10,8 @@ ENV SITE=/usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/
 COPY --from=builder /reveal/node_modules/reveal.js $SITE/
-COPY ./src $SITE/src/
-COPY index.html $SITE/index.html
+COPY ./markdown/src $SITE/src/
+COPY ./markdown/index.html $SITE/index.html
 
 # set up as non-root/ non-system user for deploying to strict environments
 RUN deluser nginx \
@@ -21,7 +21,7 @@ RUN deluser nginx \
   && touch /var/run/nginx.pid \
   && chown -R nginx:nginx /var/run/nginx.pid \
   && chown -R nginx:nginx /var/cache/nginx \
-  && chown -R nginx:nginx $SITE \
+  && chown -R nginx:nginx $SITE
 
 EXPOSE 8080
 USER 1000
