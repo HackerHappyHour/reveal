@@ -18,7 +18,7 @@ with modern tooling, api design, and front-end features.
 
 ---
 
-reveal.js comes with a broad range of features including [nested slides](https://github.com/HackerHappyHour/reveal.js#markup), [Markdown contents](https://github.com/HackerHappyHour/reveal.js#markdown), [PDF export](https://github.com/HackerHappyHour/reveal.js#pdf-export), [speaker notes](https://github.com/HackerHappyHour/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/HackerHappyHour/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com?ref=github).
+reveal.js comes with a broad range of features including [nested slides](https://github.com/HackerHappyHour/reveal.js#markup), [Markdown contents](https://github.com/HackerHappyHour/reveal#markdown), [PDF export](https://github.com/HackerHappyHour/reveal.js#pdf-export), [speaker notes](https://github.com/HackerHappyHour/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/HackerHappyHour/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com?ref=github).
 
 
 ## Table of contents
