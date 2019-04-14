@@ -1,4 +1,4 @@
-.PHONEY: build markdown
+.PHONY: build markdown
 
 build:
 	docker build -f docker/Dockerfile -t hackerhappyhour/reveal:latest ./docker
