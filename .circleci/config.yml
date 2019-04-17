@@ -43,7 +43,7 @@ jobs:
           paths:
             - node_modules
 
-  build-image:
+  build-images:
     docker:
       - image: circleci/buildpack-deps:stretch
     environment:
@@ -60,6 +60,13 @@ jobs:
       - run:
           name: Build Markdown Docker image
           command: make build-markdown
+      - run:
+          name: Publish Images
+          command: |
+            echo "${DOCKERHUB_PASS}" | docker login -u "$DOCKERHUB_USER" --password-stdin
+            docker push ${IMAGE_NAME}:latest
+            docker push ${IMAGE_NAME}:dev
+            docker push ${IMAGE_NAME}:markdown
 
 workflows:
   version: 2
@@ -82,7 +89,7 @@ workflows:
             branches:
               only:
                 - master
-      - build-image:
+      - build-images:
           requires:
             - release-dry-run
           filters:
