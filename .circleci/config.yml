@@ -43,6 +43,24 @@ jobs:
           paths:
             - node_modules
 
+  build-image:
+    docker:
+      - image: circleci/buildpack-deps:stretch
+    environment:
+      IMAGE_NAME: hackerhappyhour/reveal
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: make build
+      - run:
+          name: Build Dev Docker image
+          command: make build-dev
+      - run:
+          name: Build Markdown Docker image
+          command: make build-markdown
+
 workflows:
   version: 2
   build-and-release:
@@ -64,3 +82,11 @@ workflows:
             branches:
               only:
                 - master
+      - build-image:
+          requires:
+            - release-dry-run
+          filters:
+            branches:
+              only:
+                - master
+                - publish-docker

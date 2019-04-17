@@ -1,0 +1,12 @@
+# Example docker-compose.yml file implementation
+version: '3'
+services:
+  reveal:
+    image: hackerhappyhour/reveal:dev
+    ports:
+      - "8000:8000"
+      - "35729:35729" # live-reload server
+    volumes:
+      - ./index.html:/reveal/index.html
+      # - ./css/main.css:/reveal/css/main.css
+      # - ./images:/reveal/images

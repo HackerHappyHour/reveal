@@ -2,9 +2,11 @@ FROM node:10 AS builder
 
 WORKDIR /reveal
 
-RUN npm install reveal.js
+RUN npm install @h3/reveal
 
 FROM nginx:1.15
+
+LABEL source="https://github.com/HackerHappyHour/reveal"
 
 ENV SITE=/usr/share/nginx/html
 
