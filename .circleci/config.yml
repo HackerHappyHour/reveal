@@ -84,7 +84,6 @@ jobs:
               docker push ${IMAGE_NAME}:latest
             else
               echo "No new release detected, skipping Docker Hub publish..."
-              exit 0
             fi
 
 workflows:
