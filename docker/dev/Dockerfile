@@ -1,4 +1,4 @@
-FROM node:10 AS builder
+FROM node:10
 
 LABEL source="https://github.com/HackerHappyHour/reveal"
 
