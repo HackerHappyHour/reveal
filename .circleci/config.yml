@@ -38,6 +38,11 @@ jobs:
             - dependency-cache-
       - run: npm install
       - run: npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
+      # - run: echo "VERSION=1.0.1" > RELEASE.env # debug
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - RELEASE.env
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -51,6 +56,18 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Check if new release
+          command: |
+            if [ ! -f RELEASE.env ]; then
+              echo "No new release detected, skipping Docker Hub publish..."
+              exit 0
+            else
+              source RELEASE.env
+              cat RELEASE.env
+            fi
       - run:
           name: Build Docker image
           command: make build
