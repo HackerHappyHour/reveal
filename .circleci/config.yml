@@ -40,7 +40,7 @@ jobs:
       - run: |
           npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
           cat RELEASE.env
-      - run: echo -e "NEW_RELEASE=true\nVERSION=1.0.1" > RELEASE.env
+      # - run: echo -e "NEW_RELEASE=true\nVERSION=1.0.1" > RELEASE.env # force publish docker images at hard-coded version
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -76,12 +76,12 @@ jobs:
               docker tag ${IMAGE_NAME}:markdown ${IMAGE_NAME}:markdown-${VERSION}
               echo "Publishing images..."
               echo "${DOCKERHUB_PASS}" | docker login -u "$DOCKERHUB_USER" --password-stdin
-              docker push ${IMAGE_NAME}:latest
+              docker push ${IMAGE_NAME}:dev-${VERSION}
               docker push ${IMAGE_NAME}:dev
+              docker push ${IMAGE_NAME}:markdown-${VERSION}
               docker push ${IMAGE_NAME}:markdown
               docker push ${IMAGE_NAME}:${VERSION}
-              docker push ${IMAGE_NAME}:dev-${VERSION}
-              docker push ${IMAGE_NAME}:markdown-${VERSION}
+              docker push ${IMAGE_NAME}:latest
             else
               echo "No new release detected, skipping Docker Hub publish..."
               exit 0
@@ -110,9 +110,8 @@ workflows:
                 - master
       - publish-docker:
           requires:
-            - release-dry-run
+            - release
           filters:
             branches:
               only:
                 - master
-                - publish-docker
