@@ -40,6 +40,7 @@ jobs:
       - run: |
           npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
           cat RELEASE.env
+      - run: echo -e "NEW_RELEASE=true\nVERSION=1.0.1" > RELEASE.env
       - persist_to_workspace:
           root: ~/project
           paths:
