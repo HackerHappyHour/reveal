@@ -9,7 +9,7 @@ module.exports = {
     '@semantic-release/git',
     '@semantic-release/github',
     ['@semantic-release/exec', {
-      verifyReleaseCmd: 'echo "VERSION=${nextRelease.version}" > RELEASE.env'
+      verifyReleaseCmd: 'echo "VERSION=${nextRelease.version}\nNEW_RELEASE=true" > RELEASE.env'
     }],
   ],
   debug: true,
