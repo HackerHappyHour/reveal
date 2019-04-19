@@ -4,7 +4,8 @@
 ![CircleCI (all branches)](https://img.shields.io/circleci/project/github/HackerHappyHour/reveal.svg?logo=circleci&style=flat-square)
 [![npm](https://img.shields.io/npm/v/@h3/reveal.svg?style=flat-square)](https://www.npmjs.com/package/@h3/reveal)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![Greenkeeper badge](https://badges.greenkeeper.io/HackerHappyHour/reveal.svg)](https://greenkeeper.io/) 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) 
+[![Greenkeeper badge](https://badges.greenkeeper.io/HackerHappyHour/reveal.svg?style=flat-square)](https://greenkeeper.io/) 
 ![node](https://img.shields.io/node/v/@h3/reveal.svg?style=flat-square)
 
 A framework for easily creating beautiful web-based presentations. [Check out the live demo](http://revealjs.com/).
@@ -48,6 +49,7 @@ reveal.js comes with a broad range of features including [nested slides](https:/
 - [Ready Event](#ready-event)
 - [Auto-sliding](#auto-sliding)
 - [Keyboard Bindings](#keyboard-bindings)
+- [Vertical Slide Navigation](#vertical-slide-navigation)
 - [Touch Navigation](#touch-navigation)
 - [Lazy Loading](#lazy-loading)
 - [API](#api)
@@ -66,12 +68,14 @@ reveal.js comes with a broad range of features including [nested slides](https:/
   - [Fullscreen mode](#fullscreen-mode)
   - [Embedded media](#embedded-media)
   - [Stretching elements](#stretching-elements)
+  - [Resize Event](#resize-event)
   - [postMessage API](#postmessage-api)
 - [PDF Export](#pdf-export)
 - [Theming](#theming)
 - [Speaker Notes](#speaker-notes)
   - [Share and Print Speaker Notes](#share-and-print-speaker-notes)
   - [Server Side Speaker Notes](#server-side-speaker-notes)
+- [Plugins](#plugins)
 - [Multiplexing](#multiplexing)
   - [Master presentation](#master-presentation)
   - [Client presentation](#client-presentation)
@@ -250,7 +254,7 @@ We use [marked](https://github.com/chjj/marked) to parse Markdown. To customise 
 ```javascript
 Reveal.initialize({
 	// Options which are passed into marked
-	// See https://github.com/chjj/marked#options-1
+	// See https://marked.js.org/#/USING_ADVANCED.md#options
 	markdown: {
 		smartypants: true
 	}
@@ -284,7 +288,11 @@ Reveal.initialize({
 	// Display the page number of the current slide
 	slideNumber: false,
 
-	// Push each slide change to the browser history
+	// Add the current slide number to the URL hash so that reloading the
+	// page/copying the URL will return you to the same slide
+	hash: false,
+
+	// Push each slide change to the browser history. Implies `hash: true`
 	history: false,
 
 	// Enable keyboard shortcuts for navigation
@@ -304,6 +312,9 @@ Reveal.initialize({
 
 	// Change the presentation direction to be RTL
 	rtl: false,
+
+	// See https://github.com/hakimel/reveal.js/#navigation-mode
+	navigationMode: 'default',
 
 	// Randomizes the order of slides each time the presentation loads
 	shuffle: false,
@@ -332,6 +343,13 @@ Reveal.initialize({
 	// - false: No media will autoplay, regardless of individual setting
 	autoPlayMedia: null,
 
+	// Global override for preloading lazy-loaded iframes
+	// - null: Iframes with data-src AND data-preload will be loaded when within
+	//   the viewDistance, iframes with only data-src will be loaded when visible
+	// - true: All iframes with data-src will be loaded when within the viewDistance
+	// - false: All iframes with data-src will be loaded only when visible
+	preloadIframes: null,
+
 	// Number of milliseconds between automatically proceeding to the
 	// next slide, disabled when set to 0, this value can be overwritten
 	// by using a data-autoslide attribute on your slides
@@ -350,6 +368,12 @@ Reveal.initialize({
 
 	// Enable slide navigation via mouse wheel
 	mouseWheel: false,
+
+	// Hide cursor if inactive
+	hideInactiveCursor: true,
+
+	// Time before the cursor is hidden (in ms)
+	hideCursorTime: 5000,
 
 	// Hides the address bar on mobile devices
 	hideAddressBar: true,
@@ -448,15 +472,12 @@ Reveal.js doesn't _rely_ on any third party scripts to work but a few optional l
 ```javascript
 Reveal.initialize({
 	dependencies: [
-		// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-
 		// Interpret Markdown in <section> elements
 		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 
 		// Syntax highlight for <code> elements
-		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: 'plugin/highlight/highlight.js', async: true },
 
 		// Zoom in and out with Alt+click
 		{ src: 'plugin/zoom-js/zoom.js', async: true },
@@ -475,8 +496,6 @@ You can add your own extensions using the same syntax. The following properties 
 - **async**: [optional] Flags if the script should load after reveal.js has started, defaults to false
 - **callback**: [optional] Function to execute when the script has loaded
 - **condition**: [optional] Function which must return true for the script to be loaded
-
-To load these dependencies, reveal.js requires [head.js](http://headjs.com/) *(a script loading library)* to be loaded before reveal.js.
 
 ### Ready Event
 
@@ -531,6 +550,21 @@ Reveal.configure({
 });
 ```
 
+### Vertical Slide Navigation
+
+Slides can be nested within other slides to create vertical stacks (see [Markup](#markup)). When presenting, you use the left/right arrows to step through the main (horizontal) slides. When you arrive at a vertical stack you can optionally press the up/down arrows to view the vertical slides or skip past them by pressing the right arrow. Here's an example showing a bird's-eye view of what this looks like in action:
+
+<img src="https://static.slid.es/support/reveal.js-vertical-slides.gif" width="450">
+
+#### Navigation Mode
+You can finetune the reveal.js navigation behavior by using the `navigationMode` config option. Note that these options are only useful for presnetations that use a mix of horizontal and vertical slides. The following navigation modes are available:
+
+| Value                         | Description |
+| :---------------------------  | :---------- |
+| default                       | Left/right arrow keys step between horizontal slides. Up/down arrow keys step between vertical slides. Space key steps through all slides (both horizontal and vertical). |
+| linear                        | Removes the up/down arrows. Left/right arrows step through all slides (both horizontal and vertical). |
+| grid                          | When this is enabled, stepping left/right from a vertical stack to an adjacent vertical stack will land you at the same vertical index.<br><br>Consider a deck with six slides ordered in two vertical stacks:<br>`1.1`&nbsp;&nbsp;&nbsp;&nbsp;`2.1`<br>`1.2`&nbsp;&nbsp;&nbsp;&nbsp;`2.2`<br>`1.3`&nbsp;&nbsp;&nbsp;&nbsp;`2.3`<br><br>If you're on slide 1.3 and navigate right, you will normally move from 1.3 -> 2.1. With navigationMode set to "grid" the same navigation takes you from 1.3 -> 2.3. |
+
 ### Touch Navigation
 
 You can swipe to navigate through a presentation on any touch-enabled device. Horizontal swipes change between horizontal slides, vertical swipes change between vertical slides. If you wish to disable this you can set the `touch` config option to false when initializing reveal.js.
@@ -541,7 +575,7 @@ If there's some part of your content that needs to remain accessible to touch ev
 
 When working on presentation with a lot of media or iframe content it's important to load lazily. Lazy loading means that reveal.js will only load content for the few slides nearest to the current slide. The number of slides that are preloaded is determined by the `viewDistance` configuration option.
 
-To enable lazy loading all you need to do is change your `src` attributes to `data-src` as shown below. This is supported for image, video, audio and iframe elements. Lazy loaded iframes will also unload when the containing slide is no longer visible.
+To enable lazy loading all you need to do is change your `src` attributes to `data-src` as shown below. This is supported for image, video, audio and iframe elements.
 
 ```html
 <section>
@@ -553,6 +587,26 @@ To enable lazy loading all you need to do is change your `src` attributes to `da
   </video>
 </section>
 ```
+
+#### Lazy Loading Iframes
+
+Note that lazy loaded iframes ignore the `viewDistance` configuration and will only load when their containing slide becomes visible. Iframes are also unloaded as soon as the slide is hidden.
+
+When we lazy load a video or audio element, reveal.js won't start playing that content until the slide becomes visible. However there is no way to control this for an iframe since that could contain any kind of content. That means if we loaded an iframe before the slide is visible on screen it could begin playing media and sound in the background.
+
+You can override this behavior with the `data-preload` attribute. The iframe below will be loaded
+according to the `viewDistance`.
+
+```html
+<section>
+	<iframe data-src="http://hakim.se" data-preload></iframe>
+</section>
+```
+
+You can also change the default globally with the `preloadIframes` configuration option. If set to
+`true` ALL iframes with a `data-src` attribute will be preloaded when within the `viewDistance`
+regardless of individual `data-preload` attributes. If set to `false`, all iframes will only be
+loaded when they become visible.
 
 ### API
 
@@ -610,6 +664,9 @@ Reveal.isLastSlide();
 Reveal.isOverview();
 Reveal.isPaused();
 Reveal.isAutoSliding();
+
+// Returns the top-level DOM element
+getRevealElement(); // <div class="reveal">...</div>
 ```
 
 ### Custom Key Bindings
@@ -886,15 +943,15 @@ Reveal.addEventListener( 'fragmenthidden', function( event ) {
 } );
 ```
 
-### Code syntax highlighting
+### Code Syntax Highlighting
 
-By default, Reveal is configured with [highlight.js](https://highlightjs.org/) for code syntax highlighting. To enable syntax highlighting, you'll have to load the highlight plugin ([plugin/highlight/highlight.js](plugin/highlight/highlight.js)) and a highlight.js CSS theme (Reveal comes packaged with the zenburn theme: [lib/css/zenburn.css](lib/css/zenburn.css)).
+By default, Reveal is configured with [highlight.js](https://highlightjs.org/) for code syntax highlighting. To enable syntax highlighting, you'll have to load the highlight plugin ([plugin/highlight/highlight.js](plugin/highlight/highlight.js)) and a highlight.js CSS theme (Reveal comes packaged with the Monokai themes: [lib/css/monokai.css](lib/css/monokai.css)).
 
 ```javascript
 Reveal.initialize({
 	// More info https://github.com/hakimel/reveal.js#dependencies
 	dependencies: [
-		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: 'plugin/highlight/highlight.js', async: true },
 	]
 });
 ```
@@ -913,6 +970,33 @@ Below is an example with clojure code that will be syntax highlighted. When the 
 </section>
 ```
 
+#### Line Numbers & Highlights
+
+To enable line numbers, add `data-line-numbers` to your `<code>` tags. If you want to highlight specific lines you can provide a comma separated list of line numbers using the same attribute. For example, in the following example lines 4 and 8-11 are highlighted:
+
+```html
+<pre><code class="hljs" data-line-numbers="4,8-11">
+import React, { useState } from 'react';
+ 
+function Example() {
+  const [count, setCount] = useState(0);
+ 
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+</code></pre>
+```
+
+<img width="300" alt="line-numbers" src="https://user-images.githubusercontent.com/629429/55332077-eb3c4780-5494-11e9-8854-ba33cd0fa740.png">
+
+
+
 ### Slide number
 
 If you would like to display the page number of the current slide you can do so using the `slideNumber` and `showSlideNumber` configuration values.
@@ -927,6 +1011,12 @@ Reveal.configure({ slideNumber: true });
 //    "c": 	flattened slide number
 //  "c/t": 	flattened slide number / total slides
 Reveal.configure({ slideNumber: 'c/t' });
+
+// You can provide a function to fully customize the number:
+Reveal.configure({ slideNumber: function() {
+    // Ignore numbering of vertical slides
+    return [ Reveal.getIndices().h ];
+}});
 
 // Control which views the slide number displays on using the "showSlideNumber" value:
 //     "all": show on all views (default)
@@ -983,6 +1073,16 @@ Limitations:
 - Only direct descendants of a slide section can be stretched
 - Only one descendant per slide section can be stretched
 
+### Resize Event
+
+When reveal.js changes the scale of the slides it fires a resize event. You can subscribe to the event to resize your elements accordingly.
+
+```javascript
+Reveal.addEventListener( 'resize', function( event ) {
+	// event.scale, event.oldScale, event.size
+} );
+```
+
 ### postMessage API
 
 The framework has a built-in postMessage API that can be used when communicating with a presentation inside of another window. Here's an example showing how you'd make a reveal.js instance in the given window proceed to slide 2:
@@ -1019,7 +1119,7 @@ Reveal.initialize({
 
 ## PDF Export
 
-Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use [Google Chrome](http://google.com/chrome) or [Chromium](https://www.chromium.org/Home) and to be serving the presentation from a webserver.
+Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use [Google Chrome](http://google.com/chrome) or [Chromium](https://www.chromium.org/Home) and to be serving the presentation from a web server.
 Here's an example of an exported presentation that's been uploaded to SlideShare: http://www.slideshare.net/hakimel/revealjs-300.
 
 ### Separate pages for fragments
@@ -1159,6 +1259,28 @@ Then:
 3. Run `node plugin/notes-server`
 
 
+## Plugins
+
+Plugins should register themselves with reveal.js by calling `Reveal.registerPlugin( 'myPluginID', MyPlugin )`. Registered plugin instances can optionally expose an "init" function that reveal.js will call to initialize them.
+
+When reveal.js is booted up via `Reveal.initialize()`, it will go through all registered plugins and invoke their "init" methods. If the "init" method returns a Promise, reveal.js will wait for that promise to be fullfilled before finshing the startup sequence and firing the [ready](#ready-event) event. Here's an example of a plugin that does some asynchronous work before reveal.js can proceed:
+
+```javascript
+let MyPlugin = {
+	init: () =>  new Promise( resolve => setTimeout( resolve, 3000 ) )
+};
+Reveal.registerPlugin( 'myPlugin', MyPlugin );
+Reveal.addEventListener( 'ready', () => console.log( 'Three seconds later...' ) );
+Reveal.initialize();
+```
+
+If the init method does _not_ return a Promise, the plugin is considered ready right away and will not hold up the reveal.js startup sequence.
+
+### Retrieving Plugins
+
+If you want to check if a specific plugin is registered you can use the `Reveal.hasPlugin` method and pass in a plugin ID, for example: `Reveal.hasPlugin( 'myPlugin' )`. If you want to retrieve a plugin instance you can use `Reveal.getPlugin( 'myPlugin' )`.
+
+
 ## Multiplexing
 
 The multiplex plugin allows your audience to view the slides of the presentation you are controlling on their own phone, tablet or laptop. As the master presentation navigates the slides, all client presentations will update in real time. See a demo at [https://reveal-js-multiplex-ccjbegmaii.now.sh/](https://reveal-js-multiplex-ccjbegmaii.now.sh/).
@@ -1195,7 +1317,7 @@ Reveal.initialize({
 
 	// Don't forget to add the dependencies
 	dependencies: [
-		{ src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
+		{ src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
 		{ src: 'plugin/multiplex/master.js', async: true },
 
 		// and if you want speaker notes
@@ -1225,7 +1347,7 @@ Reveal.initialize({
 
 	// Don't forget to add the dependencies
 	dependencies: [
-		{ src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
+		{ src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
 		{ src: 'plugin/multiplex/client.js', async: true }
 
 		// other dependencies...
@@ -1267,7 +1389,7 @@ Reveal.initialize({
 
 	// Don't forget to add the dependencies
 	dependencies: [
-		{ src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
+		{ src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
 		{ src: 'plugin/multiplex/client.js', async: true }
 
 		// other dependencies...
@@ -1291,7 +1413,7 @@ Reveal.initialize({
 
 	// Don't forget to add the dependencies
 	dependencies: [
-		{ src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
+		{ src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
 		{ src: 'plugin/multiplex/master.js', async: true },
 		{ src: 'plugin/multiplex/client.js', async: true }
 
@@ -1316,6 +1438,8 @@ Reveal.initialize({
 	math: {
 		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
 		config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+		// pass other options into `MathJax.Hub.Config()`
+		TeX: { Macros: macros }
 	},
 
 	dependencies: [
@@ -1327,7 +1451,7 @@ Reveal.initialize({
 Read MathJax's documentation if you need [HTTPS delivery](http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn) or serving of [specific versions](http://docs.mathjax.org/en/latest/configuration.html#loading-mathjax-from-the-cdn) for stability.
 
 #### MathJax in Markdown
-If you want to include math inside of a presentation written in Markdown you need to wrap the forumla in backticks. This prevents syntax conflicts between LaTeX and Markdown. For example:
+If you want to include math inside of a presentation written in Markdown you need to wrap the formula in backticks. This prevents syntax conflicts between LaTeX and Markdown. For example:
 
 ```
 `$$ J(\theta_0,\theta_1) = \sum_{i=0} $$`
@@ -1337,7 +1461,7 @@ If you want to include math inside of a presentation written in Markdown you nee
 
 MIT licensed
 
-Copyright (C) 2018 Hakim El Hattab, http://hakim.se  
+Copyright (C) 2019 Hakim El Hattab, http://hakim.se
 Modified work Copyright 2019 Hacker Happy Hour, https://github.com/HackerHappyHour and reveal.js contributors
 
 [projects]: https://github.com/HackerHappyHour/reveal.js/projects
