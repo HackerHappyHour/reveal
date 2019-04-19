@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/HackerHappyHour/reveal/compare/v1.0.1...v1.1.0) (2019-04-19)
+
+
+### Features
+
+* merge upstream 3.8.0 release ([0cb98f6](https://github.com/HackerHappyHour/reveal/commit/0cb98f6))
+
 ## [1.0.1](https://github.com/HackerHappyHour/reveal/compare/v1.0.0...v1.0.1) (2019-04-17)
 
 
