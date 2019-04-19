@@ -9,6 +9,25 @@ module.exports = grunt => {
 
 	if (!Array.isArray(root)) root = [root];
 
+	const isCI = grunt.option('ci') || false;
+
+	const qunit = {
+		files: [ 'test/*.html' ],
+	};
+
+	if (isCI) {
+		qunit.options = {
+			puppeteer: {
+				headless: true,
+				executablePath: '/usr/bin/google-chrome',
+				args: [
+					'--no-snadbox',
+					'--disable-setuid-sandbox',
+				]
+			}
+		};
+	}
+
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -22,21 +41,7 @@ module.exports = grunt => {
 				' * Copyright (C) 2019 Hakim El Hattab, http://hakim.se\n' +
 				' */'
 		},
-
-		qunit: {
-			files: [ 'test/*.html' ],
-			options: {
-				puppeteer: {
-					headless: true,
-					executablePath: '/usr/bin/google-chrome',
-					args: [
-						'--no-snadbox',
-						'--disable-setuid-sandbox',
-					]
-				}
-			}
-		},
-
+		qunit,
 		uglify: {
 			options: {
 				banner: '<%= meta.banner %>\n',
