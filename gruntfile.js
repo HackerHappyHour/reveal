@@ -24,7 +24,17 @@ module.exports = grunt => {
 		},
 
 		qunit: {
-			files: [ 'test/*.html' ]
+			files: [ 'test/*.html' ],
+			options: {
+				puppeteer: {
+					headless: true,
+					executablePath: '/usr/bin/google-chrome',
+					args: [
+						'--no-snadbox',
+						'--disable-setuid-sandbox',
+					]
+				}
+			}
 		},
 
 		uglify: {
