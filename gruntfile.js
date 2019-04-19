@@ -23,6 +23,7 @@ module.exports = grunt => {
 				args: [
 					'--no-snadbox',
 					'--disable-setuid-sandbox',
+					'--disable-dev-shm-usage'
 				]
 			}
 		};
