@@ -24,6 +24,10 @@ Our most important goals are currently tracked in our [projects][] and [mileston
 looks to pull as many existing PR's from the upstream project as possible, and bring the reveal project up to speed
 with modern tooling, api design, and front-end features.
 
+If you have an existing Pull Request open at [hakimel/reveal.js][upstream] and would like to review the status of
+our review of your PR, check out the [Review Upstream Pull Requests][upstream reviews] board. Our process for reviewing
+pull requests from [hakimel/reveal.js][upstream] is documented in our `CONTRIBUTING.md`.
+
 ---
 
 reveal.js comes with a broad range of features including [nested slides](https://github.com/HackerHappyHour/reveal.js#markup), [Markdown contents](https://github.com/HackerHappyHour/reveal#markdown), [PDF export](https://github.com/HackerHappyHour/reveal.js#pdf-export), [speaker notes](https://github.com/HackerHappyHour/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/HackerHappyHour/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com?ref=github).
@@ -897,6 +901,7 @@ The default fragment style is to start out invisible and fade in. This style can
 <section>
 	<p class="fragment grow">grow</p>
 	<p class="fragment shrink">shrink</p>
+	<p class="fragment strike">strike</p>
 	<p class="fragment fade-out">fade-out</p>
 	<p class="fragment fade-up">fade-up (also down, left and right!)</p>
 	<p class="fragment fade-in-then-out">fades in, then out when we move to the next step</p>
@@ -1467,3 +1472,5 @@ Modified work Copyright 2019 Hacker Happy Hour, https://github.com/HackerHappyHo
 [projects]: https://github.com/HackerHappyHour/reveal.js/projects
 [milestones]: https://github.com/HackerHappyHour/reveal.js/milestones
 [v2 milestone]: https://github.com/HackerHappyHour/reveal.js/milestone/1
+[upstream]: https://github.com/hakimel/reveal.js
+[upstream reviews]: https://github.com/HackerHappyHour/reveal/projects/2

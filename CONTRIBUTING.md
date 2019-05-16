@@ -14,6 +14,7 @@ Please keep the [issue tracker](http://github.com/HackerHappyHour/reveal/issues)
 [Bug Reports](#bug-reports)  
 [Pull Requests](#pull-requests)  
 [Plugins](#plugins)  
+[Reviewing PR's from hakimel/reveal.js](#reviwing-upstream-pull-requests)
 
 
 ### Commit Message Guidelines
@@ -58,3 +59,42 @@ When reporting a bug make sure to include information about which browser and op
 
 ### Plugins
 Please do not submit plugins as pull requests. They should be maintained in their own separate repository. More information here: https://github.com/hakimel/reveal.js/wiki/Plugin-Guidelines
+
+## Reviewing upstream pull requests
+
+One of our major goals for the release of @h3/reveal v2.0 is a review and Pull decision on all pull requests that exist upstream (hakimel/reveal.js)
+prior to the release of v2. Once v2 is released, we will no longer make it a point to review every new Pull Requests to hakimel/reveal.
+
+### Upstream PR Acceptance Guidelines
+
+Pull Requests that don't conflict with the above contribution guidelines, and don't run counter to the plans for @h3/reveal v2.0 will be attempted to be pulled.
+Contributors may use the [Review Upstream Pull Requests][upstream reviews] board to organize work on reviews.  Please provide updates to the cards whenever you
+move a card, or whenever you have anything significant to add. Please sign each card update with your gh username.
+
+- Each review should have the first line using the following format `<pull request id from hakimel/reveal.js> - <pull request title>`.
+- Turn the PR's into issues if required (even won't merge reviews could be issues for future features/work)
+- mention the upstream PR via absolute url in any issue you open regarding the PR
+- mention the upstream PR via absolute url in the comments of any merge commit containing an upstream PR
+- Post a message in the original PR conversation thread (see [linkback message template](#linkback-message-template))
+
+The reviews are organized and should be placed under one the following columns:
+- **To Review**: This is the backlog of PR's that haven't been looked at yet
+- **Reviewed/Planned**: This column should be used if you have reviewed a PR and it is something that _should_ be implemented before _or after_ release of @h3/reveal v2
+- **Needs Research/Testing**: This is for PR's that need some investigation, research, or testing before a decision can be made.
+- **Work in Progress**: This column is for PR's that are currently being worked on, and require merging/rebasing before they can be pulled
+- **Merged**: This column is for reviews that have been merged!! :100:
+- **Reviewed/Won't Merge**: This column is for reviews that can't be merged for any reason. _Leave a note as to why the PR can't be pulled_
+
+### Linkback message template
+
+If you accept a PR and succesfully merge it, please post the following message on the original PR comment thread:
+
+```
+Hello <PR Author>, the open source community [HackerHappyHour](https://github.com/HackerHappyHour) has
+forked hakimel/reveal.js. We've reviewed, accepted, and merged your Pull Request at [HackerHappyHour/reveal](https://github.com/HackerHappyHour/reveal).
+If you'd like to contribute or collaborate further, check out our README and CONTRIBUTING docs.
+
+Thanks for your contribution!
+```
+
+[upstream reviews]: https://github.com/HackerHappyHour/reveal/projects/2
