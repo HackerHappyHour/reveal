@@ -1,6 +1,6 @@
 {
   "name": "@h3/reveal",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The Web-Based Presentation Framework",
   "homepage": "https://github.com/HackerHappyHour/reveal",
   "main": "js/reveal.js",

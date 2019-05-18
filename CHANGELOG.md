@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/HackerHappyHour/reveal/compare/v1.1.0...v1.1.1) (2019-05-18)
+
+
+### Bug Fixes
+
+* **package:** update express to version 4.17.0 ([cae58ea](https://github.com/HackerHappyHour/reveal/commit/cae58ea))
+
 # [1.1.0](https://github.com/HackerHappyHour/reveal/compare/v1.0.1...v1.1.0) (2019-04-19)
 
 
