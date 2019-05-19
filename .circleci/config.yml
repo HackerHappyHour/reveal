@@ -41,7 +41,6 @@ jobs:
           echo -e "NEW_RELEASE=false" > RELEASE.env # will be overriden if release detected
           npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
           cat RELEASE.env
-      # - run: echo -e "NEW_RELEASE=true\nVERSION=1.0.1" > RELEASE.env # force publish docker images at hard-coded version
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -50,42 +49,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-
-  publish-docker:
-    docker:
-      - image: circleci/buildpack-deps:stretch
-    environment:
-      IMAGE_NAME: hackerhappyhour/reveal
-    steps:
-      - checkout
-      - setup_remote_docker
-      - attach_workspace:
-          at: ~/project
-      - run:
-          name: Build and publish
-          command: |
-            cat RELEASE.env
-            source RELEASE.env # loads VERSION and NEW_RELEASE env vars in to environment
-            if [ "$NEW_RELEASE" = true ]; then
-              echo "Building images..."
-              make build
-              make build-dev
-              make build-markdown
-              echo "Tagging images with version: ${VERSION}..."
-              docker tag ${IMAGE_NAME}:latest ${IMAGE_NAME}:${VERSION}
-              docker tag ${IMAGE_NAME}:dev ${IMAGE_NAME}:dev-${VERSION}
-              docker tag ${IMAGE_NAME}:markdown ${IMAGE_NAME}:markdown-${VERSION}
-              echo "Publishing images..."
-              echo "${DOCKERHUB_PASS}" | docker login -u "$DOCKERHUB_USER" --password-stdin
-              docker push ${IMAGE_NAME}:dev-${VERSION}
-              docker push ${IMAGE_NAME}:dev
-              docker push ${IMAGE_NAME}:markdown-${VERSION}
-              docker push ${IMAGE_NAME}:markdown
-              docker push ${IMAGE_NAME}:${VERSION}
-              docker push ${IMAGE_NAME}:latest
-            else
-              echo "No new release detected, skipping Docker Hub publish..."
-            fi
 
 workflows:
   version: 2
@@ -104,13 +67,6 @@ workflows:
       - release:
           requires:
             - build
-          filters:
-            branches:
-              only:
-                - master
-      - publish-docker:
-          requires:
-            - release
           filters:
             branches:
               only:
