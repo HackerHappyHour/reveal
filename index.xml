@@ -1,9 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on @h3/reveal Docs</title><link>https://hackerhappyhour.github.io/reveal/</link><description>Recent content in Introduction on @h3/reveal Docs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://hackerhappyhour.github.io/reveal/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://hackerhappyhour.github.io/reveal/instructions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hackerhappyhour.github.io/reveal/instructions/</guid><description>Instructions Markup Here&amp;rsquo;s a barebones example of a fully working reveal.js presentation:
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/reveal.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/theme/white.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;#34;reveal&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slides&amp;#34;&amp;gt; &amp;lt;section&amp;gt;Slide 1&amp;lt;/section&amp;gt; &amp;lt;section&amp;gt;Slide 2&amp;lt;/section&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/reveal.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; Reveal.initialize(); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; The presentation markup hierarchy needs to be .reveal &amp;gt; .slides &amp;gt; section where the section represents one slide and can be repeated indefinitely. If you place multiple section elements inside of another section they will be shown as vertical slides.</description></item><item><title/><link>https://hackerhappyhour.github.io/reveal/mathjax/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hackerhappyhour.github.io/reveal/mathjax/</guid><description>MathJax If you want to display math equations in your presentation you can easily do so by including this plugin. The plugin is a very thin wrapper around the MathJax library. To use it you&amp;rsquo;ll need to include it as a reveal.js dependency, find our more about dependencies here.
-The plugin defaults to using LaTeX but that can be adjusted through the math configuration object. Note that MathJax is loaded from a remote server.</description></item><item><title/><link>https://hackerhappyhour.github.io/reveal/multiplexing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hackerhappyhour.github.io/reveal/multiplexing/</guid><description>Multiplexing The multiplex plugin allows your audience to view the slides of the presentation you are controlling on their own phone, tablet or laptop. As the master presentation navigates the slides, all client presentations will update in real time. See a demo at https://reveal-js-multiplex-ccjbegmaii.now.sh/.
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on @h3/reveal Docs</title>
+    <link>https://hackerhappyhour.github.io/reveal/</link>
+    <description>Recent content in Introduction on @h3/reveal Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://hackerhappyhour.github.io/reveal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://hackerhappyhour.github.io/reveal/instructions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackerhappyhour.github.io/reveal/instructions/</guid>
+      <description>Instructions Markup Here&amp;rsquo;s a barebones example of a fully working reveal.js presentation:
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/reveal.css&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/theme/white.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;#34;reveal&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slides&amp;#34;&amp;gt; &amp;lt;section&amp;gt;Slide 1&amp;lt;/section&amp;gt; &amp;lt;section&amp;gt;Slide 2&amp;lt;/section&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/reveal.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; Reveal.initialize(); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; The presentation markup hierarchy needs to be .reveal &amp;gt; .slides &amp;gt; section where the section represents one slide and can be repeated indefinitely. If you place multiple section elements inside of another section they will be shown as vertical slides.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hackerhappyhour.github.io/reveal/mathjax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackerhappyhour.github.io/reveal/mathjax/</guid>
+      <description>MathJax If you want to display math equations in your presentation you can easily do so by including this plugin. The plugin is a very thin wrapper around the MathJax library. To use it you&amp;rsquo;ll need to include it as a reveal.js dependency, find our more about dependencies here.
+The plugin defaults to using LaTeX but that can be adjusted through the math configuration object. Note that MathJax is loaded from a remote server.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hackerhappyhour.github.io/reveal/multiplexing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackerhappyhour.github.io/reveal/multiplexing/</guid>
+      <description>Multiplexing The multiplex plugin allows your audience to view the slides of the presentation you are controlling on their own phone, tablet or laptop. As the master presentation navigates the slides, all client presentations will update in real time. See a demo at https://reveal-js-multiplex-ccjbegmaii.now.sh/.
 The multiplex plugin needs the following 3 things to operate:
-Master presentation that has control Client presentations that follow the master Socket.io server to broadcast events from the master to the clients Master presentation Served from a static file server accessible (preferably) only to the presenter.</description></item><item><title/><link>https://hackerhappyhour.github.io/reveal/pdf-export/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hackerhappyhour.github.io/reveal/pdf-export/</guid><description>PDF Export Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use Google Chrome or Chromium and to be serving the presentation from a web server. Here&amp;rsquo;s an example of an exported presentation that&amp;rsquo;s been uploaded to SlideShare: http://www.slideshare.net/hakimel/revealjs-300.
-Separate pages for fragments Fragments are printed on separate slides by default. Meaning if you have a slide with three fragment steps, it will generate three separate slides where the fragments appear incrementally.</description></item><item><title/><link>https://hackerhappyhour.github.io/reveal/plugins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hackerhappyhour.github.io/reveal/plugins/</guid><description>Plugins Plugins should register themselves with reveal.js by calling Reveal.registerPlugin( &#39;myPluginID&#39;, MyPlugin ). Registered plugin instances can optionally expose an &amp;ldquo;init&amp;rdquo; function that reveal.js will call to initialize them.
-When reveal.js is booted up via Reveal.initialize(), it will go through all registered plugins and invoke their &amp;ldquo;init&amp;rdquo; methods. If the &amp;ldquo;init&amp;rdquo; method returns a Promise, reveal.js will wait for that promise to be fullfilled before finshing the startup sequence and firing the ready event.</description></item><item><title/><link>https://hackerhappyhour.github.io/reveal/speaker-notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hackerhappyhour.github.io/reveal/speaker-notes/</guid><description>Speaker Notes reveal.js comes with a speaker notes plugin which can be used to present per-slide notes in a separate browser window. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven&amp;rsquo;t written any notes. Press the »S« key on your keyboard to open the notes window.
-A speaker timer starts as soon as the speaker view is opened.</description></item><item><title/><link>https://hackerhappyhour.github.io/reveal/theming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hackerhappyhour.github.io/reveal/theming/</guid><description>Theming The framework comes with a few different themes included:
-black: Black background, white text, blue links (default theme) white: White background, black text, blue links league: Gray background, white text, blue links (default theme for reveal.js &amp;lt; 3.0.0) beige: Beige background, dark text, brown links sky: Blue background, thin dark text, blue links night: Black background, thick white text, orange links serif: Cappuccino background, gray text, brown links simple: White background, black text, blue links solarized: Cream-colored background, dark green text, blue links Each theme is available as a separate stylesheet.</description></item></channel></rss>
+ Master presentation that has control Client presentations that follow the master Socket.io server to broadcast events from the master to the clients  Master presentation Served from a static file server accessible (preferably) only to the presenter.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hackerhappyhour.github.io/reveal/pdf-export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackerhappyhour.github.io/reveal/pdf-export/</guid>
+      <description>PDF Export Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use Google Chrome or Chromium and to be serving the presentation from a web server. Here&amp;rsquo;s an example of an exported presentation that&amp;rsquo;s been uploaded to SlideShare: http://www.slideshare.net/hakimel/revealjs-300.
+Separate pages for fragments Fragments are printed on separate slides by default. Meaning if you have a slide with three fragment steps, it will generate three separate slides where the fragments appear incrementally.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hackerhappyhour.github.io/reveal/plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackerhappyhour.github.io/reveal/plugins/</guid>
+      <description>Plugins Plugins should register themselves with reveal.js by calling Reveal.registerPlugin( &#39;myPluginID&#39;, MyPlugin ). Registered plugin instances can optionally expose an &amp;ldquo;init&amp;rdquo; function that reveal.js will call to initialize them.
+When reveal.js is booted up via Reveal.initialize(), it will go through all registered plugins and invoke their &amp;ldquo;init&amp;rdquo; methods. If the &amp;ldquo;init&amp;rdquo; method returns a Promise, reveal.js will wait for that promise to be fullfilled before finshing the startup sequence and firing the ready event.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hackerhappyhour.github.io/reveal/speaker-notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackerhappyhour.github.io/reveal/speaker-notes/</guid>
+      <description>Speaker Notes reveal.js comes with a speaker notes plugin which can be used to present per-slide notes in a separate browser window. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven&amp;rsquo;t written any notes. Press the »S« key on your keyboard to open the notes window.
+A speaker timer starts as soon as the speaker view is opened.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hackerhappyhour.github.io/reveal/theming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackerhappyhour.github.io/reveal/theming/</guid>
+      <description>Theming The framework comes with a few different themes included:
+ black: Black background, white text, blue links (default theme) white: White background, black text, blue links league: Gray background, white text, blue links (default theme for reveal.js &amp;lt; 3.0.0) beige: Beige background, dark text, brown links sky: Blue background, thin dark text, blue links night: Black background, thick white text, orange links serif: Cappuccino background, gray text, brown links simple: White background, black text, blue links solarized: Cream-colored background, dark green text, blue links  Each theme is available as a separate stylesheet.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,1 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://hackerhappyhour.github.io/reveal/instructions/</loc></url><url><loc>https://hackerhappyhour.github.io/reveal/mathjax/</loc></url><url><loc>https://hackerhappyhour.github.io/reveal/multiplexing/</loc></url><url><loc>https://hackerhappyhour.github.io/reveal/pdf-export/</loc></url><url><loc>https://hackerhappyhour.github.io/reveal/plugins/</loc></url><url><loc>https://hackerhappyhour.github.io/reveal/speaker-notes/</loc></url><url><loc>https://hackerhappyhour.github.io/reveal/theming/</loc></url><url><loc>https://hackerhappyhour.github.io/reveal/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/instructions/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/mathjax/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/multiplexing/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/pdf-export/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/plugins/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/speaker-notes/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/theming/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hackerhappyhour.github.io/reveal/</loc>
+    <lastmod>2019-06-15T21:04:04-05:00</lastmod>
+  </url>
+  
+</urlset>
