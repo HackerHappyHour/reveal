@@ -19,7 +19,7 @@ With this method, you can build the static site with `hugo`, and the content
 changes will be reflected in the `gh-pages` branch, ready to be committed and
 pushed for publishing.
 
->__Note:__ The `docs/public` folder is ignored everywhere but the 'gh-pages' branch.
+>__Note:__ The `docs/public` folder is ignored everywhere but the  `gh-pages` branch.
 
 
 [Hugo]:https://gohugo.io
