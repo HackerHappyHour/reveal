@@ -1,6 +1,6 @@
 # @h3/reveal Docs
 
->A [Hugo] site for __@h3/reval__ documentation. Based on the [Hugo Book] theme.
+>A [Hugo] site for __@h3/reveal__ documentation. Based on the [Hugo Book] theme.
 
 
 ## Publishing
