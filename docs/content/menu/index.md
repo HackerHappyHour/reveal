@@ -10,3 +10,6 @@ headless: true
 - [Plugins]({{< relref "/plugins.md" >}})
 - [Multiplexing]({{< relref "/multiplexing.md" >}})
 - [MathJax]({{< relref "/mathjax.md" >}})
+
+---
+- [GitHub](https://github.com/hackerhappyhour/reveal)
