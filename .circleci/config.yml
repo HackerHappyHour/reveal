@@ -64,6 +64,7 @@ workflows:
             branches:
               ignore:
                 - master
+                - gh-pages
       - release:
           requires:
             - build
