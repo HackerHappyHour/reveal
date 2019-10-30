@@ -2,6 +2,15 @@
 
 >A [Hugo] site for __@h3/reveal__ documentation. Based on the [Hugo Book] theme.
 
+## Developing
+
+```bash
+cd docs
+
+hugo server --minify
+```
+
+Navigate to the address listed in the output.
 
 ## Publishing
 
@@ -13,6 +22,14 @@ for the `gh-pages` branch at that location:
 ```bash
 cd docs
 git worktree add -B gh-pages public origin/gh-pages
+
+hugo --minify    # outputs to docs/public/
+
+cd public        # now on gh-pages branch (separate worktree)
+
+git add .
+git commit -m "pages update"
+git push
 ```
 
 With this method, you can build the static site with `hugo`, and the content
