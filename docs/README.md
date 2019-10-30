@@ -12,15 +12,6 @@ hugo server --minify
 
 Navigate to the address listed in the output.
 
-## Building
-
-```bash
-cd docs
-
-hugo --minify
-```
-
-
 ## Publishing
 
 The source for the site is located in `docs/` on `master` branch, but the
@@ -31,6 +22,14 @@ for the `gh-pages` branch at that location:
 ```bash
 cd docs
 git worktree add -B gh-pages public origin/gh-pages
+
+hugo --minify    # outputs to docs/public/
+
+cd public        # now on gh-pages branch (separate worktree)
+
+git add .
+git commit -m "pages update"
+git push
 ```
 
 With this method, you can build the static site with `hugo`, and the content
