@@ -1,135 +1,12 @@
-<!DOCTYPE html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta property=og:title content><meta property=og:description content="Speaker Notes reveal.js comes with a speaker notes plugin which can be used to present per-slide notes in a separate browser window. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven&rsquo;t written any notes. Press the »S« key on your keyboard to open the notes window.
+A speaker timer starts as soon as the speaker view is opened."><meta property=og:type content=article><meta property=og:url content=https://hackerhappyhour.github.io/reveal/speaker-notes/><meta property=article:modified_time content=2019-06-15T21:04:04-05:00><title>Speaker Notes | @h3/reveal Docs</title><link rel=icon href=/reveal/favicon.png type=image/x-icon><link rel=stylesheet href=/reveal/book.min.c730b5d0daa7723c1852956a526e22d072fb88ee9cf4345eab9f70f5978f94ae.css integrity="sha256-xzC10NqncjwYUpVqUm4i0HL7iO6c9DReq59w9ZePlK4="><script defer src=/reveal/search.min.3248018d61e28dce380a3ae8bd6208d4cb6f280787fe7c31c27b0235e972ca4b.js integrity="sha256-MkgBjWHijc44CjrovWII1MtvKAeH/nwxwnsCNelyyks="></script></head><body><input type=checkbox class=hidden id=menu-control><main class="flex container"><aside class="book-menu fixed"><nav><h2 class=book-brand><a href=https://hackerhappyhour.github.io/reveal/><span>@h3/reveal Docs</span></a></h2><div class=book-search><input type=text placeholder=Search id=book-search-input maxlength=64><div class="book-search-spinner spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/reveal/><strong>Introduction</strong></a></li><li><a href=/reveal/instructions/>Instructions</a></li><li><a href=/reveal/pdf-export/>PDF Export</a></li><li><a href=/reveal/theming/>Theming</a></li><li><a href=/reveal/speaker-notes/ class=active>Speaker Notes</a></li><li><a href=/reveal/plugins/>Plugins</a></li><li><a href=/reveal/multiplexing/>Multiplexing</a></li><li><a href=/reveal/mathjax/>MathJax</a></li></ul><hr><ul><li><a href=https://github.com/hackerhappyhour/reveal>GitHub</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></aside><div class=book-page><header class="flex align-center justify-between book-header"><label for=menu-control><img src=/reveal/svg/menu.svg alt=Menu></label>
+<strong>Speaker Notes</strong></header><article class=markdown><h2 id=speaker-notes>Speaker Notes</h2><p>reveal.js comes with a speaker notes plugin which can be used to present per-slide notes in a separate browser window. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven&rsquo;t written any notes. Press the »S« key on your keyboard to open the notes window.</p><p>A speaker timer starts as soon as the speaker view is opened. You can reset it to 00:00:00 at any time by simply clicking/tapping on it.</p><p>Notes are defined by appending an <code>&lt;aside&gt;</code> element to a slide as seen below. You can add the <code>data-markdown</code> attribute to the aside element if you prefer writing notes using Markdown.</p><p>Alternatively you can add your notes in a <code>data-notes</code> attribute on the slide. Like <code>&lt;section data-notes=&quot;Something important&quot;&gt;&lt;/section&gt;</code>.</p><p>When used locally, this feature requires that reveal.js <a href=#full-setup>runs from a local web server</a>.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>section</span>&gt;
+	&lt;<span style=color:#f92672>h2</span>&gt;Some Slide&lt;/<span style=color:#f92672>h2</span>&gt;
 
-
-
-
-
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-  
-    
-    Speaker Notes
-  
- | @h3/reveal Docs</title>
-
-
-
-<link rel="stylesheet" href="/reveal/book.min.1a0250256273fabf0f848ed9a3c50aae344d758339cad9725e656ac71546e6f5.css">
-
-
-<link rel="icon" href="/reveal/favicon.png" type="image/x-icon">
-
-
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-
-  
-</head>
-
-<body>
-  <input type="checkbox" style="display: none" id="menu-control" />
-  <main class="flex container">
-
-    <aside class="book-menu fixed">
-      <nav>
-<h2 class="book-brand">
-  <a href="https://hackerhappyhour.github.io/reveal/">@h3/reveal Docs</a>
-</h2>
-
-
-
-    
-  
-  
-  
-
-  <style>
-  nav ul a[href$="\2freveal\2fspeaker-notes\2f "] {
-      color: #004ed0;
-  }
-  </style>
-
-<ul>
-<li><a href="/reveal/"><strong>Introduction</strong></a></li>
-<li><a href="/reveal/instructions/">Instructions</a></li>
-<li><a href="/reveal/pdf-export/">PDF Export</a></li>
-<li><a href="/reveal/theming/">Theming</a></li>
-<li><a href="/reveal/speaker-notes/">Speaker Notes</a></li>
-<li><a href="/reveal/plugins/">Plugins</a></li>
-<li><a href="/reveal/multiplexing/">Multiplexing</a></li>
-<li><a href="/reveal/mathjax/">MathJax</a></li>
-</ul>
-
-<hr />
-
-<ul>
-<li><a href="https://github.com/hackerhappyhour/reveal">GitHub</a></li>
-</ul>
-
-
-
-
-
-</nav>
-
-
-  
-<script>
-(function() {
-  var menu = document.querySelector('aside.book-menu nav')
-  addEventListener('beforeunload', function(event) {
-    localStorage.setItem('menu.scrollTop', menu.scrollTop)
-  });
-  menu.scrollTop = localStorage.getItem('menu.scrollTop')
-})()
-</script>
-
-
-
-    </aside>
-
-    <div class="book-page">
-      <header class="align-center justify-between book-header">
-  <label for="menu-control">
-    <img src="/reveal/svg/menu.svg" alt="Menu" />
-  </label>
-  <strong>
-  
-    
-    Speaker Notes
-  
-</strong>
-</header>
-
-      
-<article class="markdown">
-
-<h2 id="speaker-notes">Speaker Notes</h2>
-
-<p>reveal.js comes with a speaker notes plugin which can be used to present per-slide notes in a separate browser window. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven&rsquo;t written any notes. Press the »S« key on your keyboard to open the notes window.</p>
-
-<p>A speaker timer starts as soon as the speaker view is opened. You can reset it to 00:00:00 at any time by simply clicking/tapping on it.</p>
-
-<p>Notes are defined by appending an <code>&lt;aside&gt;</code> element to a slide as seen below. You can add the <code>data-markdown</code> attribute to the aside element if you prefer writing notes using Markdown.</p>
-
-<p>Alternatively you can add your notes in a <code>data-notes</code> attribute on the slide. Like <code>&lt;section data-notes=&quot;Something important&quot;&gt;&lt;/section&gt;</code>.</p>
-
-<p>When used locally, this feature requires that reveal.js <a href="#full-setup">runs from a local web server</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">section</span>&gt;
-	&lt;<span style="color:#f92672">h2</span>&gt;Some Slide&lt;/<span style="color:#f92672">h2</span>&gt;
-
-	&lt;<span style="color:#f92672">aside</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;notes&#34;</span>&gt;
+	&lt;<span style=color:#f92672>aside</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;notes&#34;</span>&gt;
 		Oh hey, these are some notes. They&#39;ll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
-	&lt;/<span style="color:#f92672">aside</span>&gt;
-&lt;/<span style="color:#f92672">section</span>&gt;</code></pre></div>
-<p>If you&rsquo;re using the external Markdown plugin, you can add notes with the help of a special delimiter:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">data-markdown</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.md&#34;</span> <span style="color:#a6e22e">data-separator</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^\n\n\n&#34;</span> <span style="color:#a6e22e">data-separator-vertical</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^\n\n&#34;</span> <span style="color:#a6e22e">data-separator-notes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^Note:&#34;</span>&gt;&lt;/<span style="color:#f92672">section</span>&gt;
+	&lt;/<span style=color:#f92672>aside</span>&gt;
+&lt;/<span style=color:#f92672>section</span>&gt;</code></pre></div><p>If you&rsquo;re using the external Markdown plugin, you can add notes with the help of a special delimiter:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>section</span> <span style=color:#a6e22e>data-markdown</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;example.md&#34;</span> <span style=color:#a6e22e>data-separator</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;^\n\n\n&#34;</span> <span style=color:#a6e22e>data-separator-vertical</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;^\n\n&#34;</span> <span style=color:#a6e22e>data-separator-notes</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;^Note:&#34;</span>&gt;&lt;/<span style=color:#f92672>section</span>&gt;
 
 # Title
 ## Sub-title
@@ -137,97 +14,14 @@ https://github.com/alex-shpak/hugo-book
 Here is some content...
 
 Note:
-This will only display in the notes window.</code></pre></div>
-<h4 id="share-and-print-speaker-notes">Share and Print Speaker Notes</h4>
-
-<p>Notes are only visible to the speaker inside of the speaker view. If you wish to share your notes with others you can initialize reveal.js with the <code>showNotes</code> configuration value set to <code>true</code>. Notes will appear along the bottom of the presentations.</p>
-
-<p>When <code>showNotes</code> is enabled notes are also included when you <a href="https://github.com/hakimel/reveal.js#pdf-export">export to PDF</a>. By default, notes are printed in a box on top of the slide. If you&rsquo;d rather print them on a separate page, after the slide, set <code>showNotes: &quot;separate-page&quot;</code>.</p>
-
-<h4 id="speaker-notes-clock-and-timers">Speaker notes clock and timers</h4>
-
-<p>The speaker notes window will also show:</p>
-
-<ul>
-<li>Time elapsed since the beginning of the presentation.  If you hover the mouse above this section, a timer reset button will appear.</li>
-<li>Current wall-clock time</li>
-<li>(Optionally) a pacing timer which indicates whether the current pace of the presentation is on track for the right timing (shown in green), and if not, whether the presenter should speed up (shown in red) or has the luxury of slowing down (blue).</li>
-</ul>
-
-<p>The pacing timer can be enabled by configuring by the <code>defaultTiming</code> parameter in the <code>Reveal</code> configuration block, which specifies the number of seconds per slide.  120 can be a reasonable rule of thumb.  Timings can also be given per slide <code>&lt;section&gt;</code> by setting the <code>data-timing</code> attribute.  Both values are in numbers of seconds.</p>
-
-<h2 id="server-side-speaker-notes">Server Side Speaker Notes</h2>
-
-<p>In some cases it can be desirable to run notes on a separate device from the one you&rsquo;re presenting on. The Node.js-based notes plugin lets you do this using the same note definitions as its client side counterpart. Include the required scripts by adding the following dependencies:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Reveal</span>.<span style="color:#a6e22e">initialize</span>({
-	<span style="color:#75715e">// ...
-</span><span style="color:#75715e"></span>
-	<span style="color:#a6e22e">dependencies</span><span style="color:#f92672">:</span> [
-		{ <span style="color:#a6e22e">src</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;socket.io/socket.io.js&#39;</span>, <span style="color:#66d9ef">async</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
-		{ <span style="color:#a6e22e">src</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;plugin/notes-server/client.js&#39;</span>, <span style="color:#66d9ef">async</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> }
+This will only display in the notes window.</code></pre></div><h4 id=share-and-print-speaker-notes>Share and Print Speaker Notes</h4><p>Notes are only visible to the speaker inside of the speaker view. If you wish to share your notes with others you can initialize reveal.js with the <code>showNotes</code> configuration value set to <code>true</code>. Notes will appear along the bottom of the presentations.</p><p>When <code>showNotes</code> is enabled notes are also included when you <a href=https://github.com/hakimel/reveal.js#pdf-export>export to PDF</a>. By default, notes are printed in a box on top of the slide. If you&rsquo;d rather print them on a separate page, after the slide, set <code>showNotes: &quot;separate-page&quot;</code>.</p><h4 id=speaker-notes-clock-and-timers>Speaker notes clock and timers</h4><p>The speaker notes window will also show:</p><ul><li>Time elapsed since the beginning of the presentation. If you hover the mouse above this section, a timer reset button will appear.</li><li>Current wall-clock time</li><li>(Optionally) a pacing timer which indicates whether the current pace of the presentation is on track for the right timing (shown in green), and if not, whether the presenter should speed up (shown in red) or has the luxury of slowing down (blue).</li></ul><p>The pacing timer can be enabled by configuring by the <code>defaultTiming</code> parameter in the <code>Reveal</code> configuration block, which specifies the number of seconds per slide. 120 can be a reasonable rule of thumb. Timings can also be given per slide <code>&lt;section&gt;</code> by setting the <code>data-timing</code> attribute. Both values are in numbers of seconds.</p><h2 id=server-side-speaker-notes>Server Side Speaker Notes</h2><p>In some cases it can be desirable to run notes on a separate device from the one you&rsquo;re presenting on. The Node.js-based notes plugin lets you do this using the same note definitions as its client side counterpart. Include the required scripts by adding the following dependencies:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>Reveal</span>.<span style=color:#a6e22e>initialize</span>({
+	<span style=color:#75715e>// ...
+</span><span style=color:#75715e></span>
+	<span style=color:#a6e22e>dependencies</span><span style=color:#f92672>:</span> [
+		{ <span style=color:#a6e22e>src</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;socket.io/socket.io.js&#39;</span>, <span style=color:#66d9ef>async</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span> },
+		{ <span style=color:#a6e22e>src</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;plugin/notes-server/client.js&#39;</span>, <span style=color:#66d9ef>async</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span> }
 	]
 });
-</code></pre></div>
-<p>Then:</p>
-
-<ol>
-<li>Install <a href="http://nodejs.org/">Node.js</a> (4.0.0 or later)</li>
-<li>Run <code>npm install</code></li>
-<li>Run <code>node plugin/notes-server</code></li>
-</ol>
-</article>
-
-      
-<div class="book-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/hackerhappyhour/reveal/commit/522ff746ea479da99978858ace2a67573406a424" title='Last modified Jun 15, 2019 by Nick Shine' target="_blank" rel="noopener">
-      <img src="/reveal/svg/calendar.svg" alt="Changed" /> Jun 15, 2019
-    </a>
-  </div>
-  
-  
-  <div>
-    <a href="https://github.com/hackerhappyhour/reveal/edit/master/docs/content/speaker-notes.md" target="_blank" rel="noopener">
-      <img src="/reveal/svg/edit.svg" alt="Edit" /> Edit this page
-    </a>
-  </div>
-  
-</div>
-
-
-      
-    </div>
-
-    
-  
-
-  <aside class="book-toc level-4 fixed">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#speaker-notes">Speaker Notes</a>
-<ul>
-<li>
-<ul>
-<li><a href="#share-and-print-speaker-notes">Share and Print Speaker Notes</a></li>
-<li><a href="#speaker-notes-clock-and-timers">Speaker notes clock and timers</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#server-side-speaker-notes">Server Side Speaker Notes</a></li>
-</ul></li>
-</ul>
-</nav>
-  </aside>
-
-
-
-  </main>
-  
-  
-  
-</body>
-
-</html>
+</code></pre></div><p>Then:</p><ol><li>Install <a href=http://nodejs.org/>Node.js</a> (4.0.0 or later)</li><li>Run <code>npm install</code></li><li>Run <code>node plugin/notes-server</code></li></ol></article><div class="book-footer justify-between"><div><a class="flex align-center" href=https://github.com/hackerhappyhour/reveal/commit/522ff746ea479da99978858ace2a67573406a424 title="Last modified Jun 15, 2019 by Nick Shine" target=_blank rel=noopener><img src=/reveal/svg/calendar.svg alt=Changed>
+<span>Jun 15, 2019</span></a></div><div><a class="flex align-center" href=https://github.com/hackerhappyhour/reveal/edit/master/docs/content/speaker-notes.md target=_blank rel=noopener><img src=/reveal/svg/edit.svg alt=Edit>
+<span>Edit this page</span></a></div></div></div><aside class="book-toc levels-3 fixed"><nav id=TableOfContents><ul><li><ul><li><a href=#speaker-notes>Speaker Notes</a><ul><li><ul><li><a href=#share-and-print-speaker-notes>Share and Print Speaker Notes</a></li><li><a href=#speaker-notes-clock-and-timers>Speaker notes clock and timers</a></li></ul></li></ul></li><li><a href=#server-side-speaker-notes>Server Side Speaker Notes</a></li></ul></li></ul></nav></aside></main></body></html>
