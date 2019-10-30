@@ -10,7 +10,6 @@ bookToc: false
 [![npm](https://img.shields.io/npm/v/@h3/reveal.svg?style=flat-square)](https://www.npmjs.com/package/@h3/reveal)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) 
-[![Greenkeeper badge](https://badges.greenkeeper.io/HackerHappyHour/reveal.svg?style=flat-square)](https://greenkeeper.io/) 
 ![node](https://img.shields.io/node/v/@h3/reveal.svg?style=flat-square)
 
 A framework for easily creating beautiful web-based presentations. [Check out the live demo](http://revealjs.com/).

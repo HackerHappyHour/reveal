@@ -2,6 +2,24 @@
 
 >A [Hugo] site for __@h3/reveal__ documentation. Based on the [Hugo Book] theme.
 
+## Developing
+
+```bash
+cd docs
+
+hugo server --minify
+```
+
+Navigate to the address listed in the output.
+
+## Building
+
+```bash
+cd docs
+
+hugo --minify
+```
+
 
 ## Publishing
 
