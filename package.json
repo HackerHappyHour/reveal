@@ -63,7 +63,7 @@
     "load-grunt-tasks": "^5.0.0",
     "mustache": "^3.0.1",
     "node-sass": "^4.11.0",
-    "semantic-release": "^15.13.12",
+    "semantic-release": "^17.2.3",
     "socket.io": "^2.2.0"
   },
   "license": "MIT",
